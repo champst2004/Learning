@@ -20,7 +20,7 @@ int main()
         cout << a[i] << " ";
     }
     cout << endl;
-    cout << "1. Buble Sort\n2. Selection Sort\n3. Insertion Sort\n4. Shell Sort\n";
+    cout << "1. Bubble Sort\n2. Selection Sort\n3. Insertion Sort\n4. Shell Sort\n";
     cout << "Enter the sorting method: ";
     cin >> n;
 
@@ -79,7 +79,36 @@ void selection(int a[], int len){
 }
 void insertion(int a[], int len){
 
+    for(int i = 1; i < len; i++){
+        int key = a[i];
+        int j = i - 1;
+        while(j >= 0 && a[j] > key){
+            a[j + 1] = a[j];
+            j--;
+        }
+        a[j + 1] = key;
+    }
+
+    cout << "Sorted array: ";
+    for(int i = 0; i < len; i++){
+        cout << a[i] << " ";
+    }
 }
 void shell(int a[], int len){
 
+    for (int gap = len/2; gap > 0; gap /= 2) {  
+        for (int i = gap; i< len; i++) {  
+            int temp = a[i];  
+            int j;  
+            for (j = i; j >= gap &&a[j - gap] > temp; j -= gap) {  
+                a[j] = a[j - gap];  
+            }  
+        a[j] = temp;  
+        }  
+    }  
+
+    cout << "Sorted array: ";
+    for(int i = 0; i < len; i++){
+        cout << a[i] << " ";
+    }
 }
