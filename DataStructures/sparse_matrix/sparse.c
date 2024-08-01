@@ -33,7 +33,7 @@ int main()
             }
         }
     }
-    printf("No of non 0 elements are : %d\n", count);
+    printf("No. of non 0 elements are : %d\n", count);
 
 
     int triplet[count + 1][3];
