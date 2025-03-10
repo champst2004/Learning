@@ -9,6 +9,9 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-<p>Welcome {{user}}</p>
+<form action="#" method="POST">
+    <input type="email" name="email" placeholder="Enter email" value="{{email if email}}">
+    <input type="submit" value="submit">
+</form>
 <a href="http://127.0.0.1:5000/logout">logout</a>
 {% endblock %}
